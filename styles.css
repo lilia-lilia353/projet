@@ -1,66 +1,46 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url(./bac.PNG); /* Définit une image de fond */
-    background-repeat :unset;
-    background-repeat:repeat; /* Répétition sur tout le conteneur */
-    background-size:auto;/* Utilise la taille originale de l'image */
-    background-color: #efebeb68; /* Couleur de fond en cas de zones non couvertes par l'image */
-}
+  body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
 
-.form-container {
-   
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 750px;
-    max-width: 100%;
-}
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
 
-.container{
-    padding-right:5em;
-}
+        table {
+            width: 100%;
+        }
 
-h1 {
-    text-align: center;
-    font-size: 24px;
-    color:#0F3B91;
-}
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-table {
-    width: 100%;
-}
+        .btn {
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: all 0.3s ease-in-out;
+        }
 
-input, select {
-    width:100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-select {
-    width:108%;
-}
-
-input[type="submit"] {
-    background-color: #E30613;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width:108%;
-}
-
-input[type="submit"]:hover {
-    background-color: #0F3B91;
-}
-
-label {
-    font-weight: bold;
-}
+        .btn:hover {
+            background: linear-gradient(90deg, #0056b3, #003d80);
+            transform: scale(1.05);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
