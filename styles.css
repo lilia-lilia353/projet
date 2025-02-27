@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(./bac.PNG); /* Définit une image de fond */
+    background-repeat :unset;
+    background-repeat:repeat; /* Répétition sur tout le conteneur */
+    background-size:auto;/* Utilise la taille originale de l'image */
+    background-color: #efebeb68; /* Couleur de fond en cas de zones non couvertes par l'image */
+}
+
+.form-container {
+   
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 750px;
+    max-width: 100%;
+}
+
+.container{
+    padding-right:5em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color:#0F3B91;
+}
+
+table {
+    width: 100%;
+}
+
+input, select {
+    width:100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width:108%;
+}
+
+input[type="submit"] {
+    background-color: #E30613;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width:108%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0F3B91;
+}
+
+label {
+    font-weight: bold;
+}
