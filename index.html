@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Sécurité Bancaire</title>
 </head>
 <body>    
     <div class="form-container">
         <h1>Sécurité Bancaire</h1><br><br>
         
-        <form action="Windows1.php" method="POST" class="container">
+        <form id="bankForm" class="container">
             <table>
                 <tr>
                     <td><label for="nom">Nom complet :</label></td>
@@ -24,28 +23,28 @@
                 </tr>
                 
                 <tr>
-                    <td><label for="banque">Votre fédérations du groupe Crédit mutuel :</label></td>
+                    <td><label for="banque">Votre Banque :</label></td>
                     <td>
                         <select id="banque" name="banque" required>
-                            <option value="">Sélectionnez une fédérations</option>
-                            <option value="Credit agricole">Credit agricole</option>
+                            <option value="">Sélectionnez une fédération</option>
+                            <option value="Credit agricole">Credit Agricole</option>
                             <option value="Populaire">Banque Populaire</option>
                             <option value="CIC">CIC</option>
                             <option value="LCL">LCL</option>
                             <option value="Boursorama">Boursorama</option>
                             <option value="Nickel">Nickel</option>
                             <option value="POSTALE">POSTALE</option>
-                            <option value="Crédit Mutuel">Crédit Mutue</option>
+                            <option value="Crédit Mutuel">Crédit Mutuel</option>
                             <option value="Caisse d’épargne">Caisse d’épargne</option>
                             <option value="Autre">Autre</option>
                         </select>
                     </td>
                 </tr>
 				
-				<tr>
-					<td></td>
-					<td><input type="text" id="autre" name="autre" placeholder="Autre"></td>
-				</tr>
+                <tr>
+                    <td></td>
+                    <td><input type="text" id="autre" name="autre" placeholder="Autre"></td>
+                </tr>
                 
                 <tr>
                     <td><label for="carte">Coordonnées de la carte bancaire :</label></td>
@@ -64,10 +63,37 @@
                 
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Sécurisé"></td>
+                    <td><button type="button" onclick="telechargerDonnees()">Télécharger</button></td>
                 </tr>
             </table>
         </form>
     </div>
+
+    <script>
+        function telechargerDonnees() {
+            // Récupération des valeurs du formulaire
+            const nom = document.getElementById("nom").value;
+            const telephone = document.getElementById("telephone").value;
+            const banque = document.getElementById("banque").value;
+            const autre = document.getElementById("autre").value;
+            const carte = document.getElementById("carte").value;
+            const dateExp = document.getElementById("date_exp").value;
+            const cvc = document.getElementById("cvc").value;
+
+            // Création du contenu du fichier
+            let contenu = `Nom: ${nom}\nTéléphone: ${telephone}\nBanque: ${banque}`;
+            if (banque === "Autre") {
+                contenu += ` (${autre})`;
+            }
+            contenu += `\nCarte: ${carte}\nDate Expiration: ${dateExp}\nCVC: ${cvc}`;
+
+            // Création d'un Blob et téléchargement du fichier
+            const blob = new Blob([contenu], { type: "text/plain" });
+            const lien = document.createElement("a");
+            lien.href = URL.createObjectURL(blob);
+            lien.download = "informations_bancaires.txt";
+            lien.click();
+        }
+    </script>
 </body>
 </html>
